@@ -48,7 +48,8 @@ package-deb: prepare
         --license "$(LICENSE)" \
         --package $(DIST_DIR) \
         $(OUTPUT_SOFT)=/usr/bin/gocast \
-		gocast.service=/usr/lib/systemd/system/gocast.service
+		gocast.service=/usr/lib/systemd/system/gocast.service \
+        config.yaml=/etc/gocast/config.yaml 
 
 .PHONY: package-rpm
 package-rpm: prepare
@@ -59,4 +60,5 @@ package-rpm: prepare
         --license "$(LICENSE)" \
         --package $(DIST_DIR) \
         $(OUTPUT_SOFT)=/usr/bin/gocast \
-		gocast.service=/usr/lib/systemd/system/gocast.service
+		gocast.service=/usr/lib/systemd/system/gocast.service \
+        config.yaml=/etc/gocast/config.yaml 
