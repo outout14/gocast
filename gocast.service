@@ -7,7 +7,7 @@ Type=simple
 ; User=gocast
 ; Group=gocast
 WorkingDirectory=/etc/gocast/
-ExecStart=/usr/bin/gocast -config /etc/gocast/config.yml
+ExecStart=/usr/bin/gocast -config /etc/gocast/config.yaml
 
 
 [Install]
