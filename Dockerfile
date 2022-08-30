@@ -10,12 +10,12 @@ COPY . /go/src/github.com/mayuresh82/gocast
 
 WORKDIR /go/src/github.com/mayuresh82/gocast
 
-RUN make linux
+RUN make build
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates bash iptables netcat-openbsd sudo
 WORKDIR /root/
-COPY --from=builder /go/src/github.com/mayuresh82/gocast .
+COPY --from=builder /go/src/github.com/mayuresh82/build/gocast* ./gocast
 
 EXPOSE 8080/tcp
 

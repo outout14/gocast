@@ -1,0 +1,15 @@
+[Unit]
+Description=GoCast healthcheck 
+After=network.target
+
+[Service]
+Type=simple
+; User=gocast
+; Group=gocast
+WorkingDirectory=/etc/gocast/
+ExecStart=/usr/bin/gocast -config /etc/gocast/config.yml
+
+
+[Install]
+WantedBy=multi-user.target
+
